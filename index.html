@@ -1,116 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>A Special Surprise 💖</title>
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Anandam NGO</title>
   <style>
     body {
       margin: 0;
-      background: linear-gradient(to bottom, #fff0f5, #ffe4e1);
-      font-family: 'Georgia', serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      overflow: hidden;
-      position: relative;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fefefe;
+      color: #333;
     }
 
-    .container {
-      text-align: center;
-      max-width: 600px;
-      padding: 30px;
-      background: white;
-      border-radius: 16px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-      display: none;
-    }
-
-    .btn {
-      padding: 15px 30px;
-      font-size: 1.2em;
-      background: #ff69b4;
-      border: none;
-      border-radius: 8px;
+    header {
+      background-color: #2e7d32;
       color: white;
-      cursor: pointer;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 40px 20px;
+      text-align: center;
     }
 
-    .btn:hover {
-      background: #ff1493;
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
     }
 
-    .hearts {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      overflow: hidden;
+    header p {
+      margin-top: 10px;
+      font-style: italic;
+      font-size: 1.2em;
     }
 
-    .heart {
-      position: absolute;
-      color: #ff4d6d;
-      font-size: 2rem;
-      animation: float 6s infinite ease-in;
-      opacity: 0.7;
+    nav {
+      background-color: #388e3c;
+      text-align: center;
+      padding: 10px;
     }
 
-    @keyframes float {
-      0% {
-        transform: translateY(100vh) scale(1);
-        opacity: 0;
-      }
-      50% {
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(-10vh) scale(1.5);
-        opacity: 0;
-      }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .cta {
+      background-color: #e8f5e9;
+      text-align: center;
+      padding: 30px;
+      border-radius: 10px;
+    }
+
+    .cta a {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 25px;
+      background-color: #43a047;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer {
+      background-color: #2e7d32;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
 
-  <div class="hearts" id="hearts"></div>
+  <header>
+    <h1>Anandam</h1>
+    <p>Spreading Happiness. Serving Humanity.</p>
+  </header>
 
-  <button class="btn" onclick="showMessage()">Click for a Surprise 💌</button>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#work">Our Work</a>
+    <a href="#donate">Donate</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-  <div class="container" id="messageBox">
-    <h1>💖 Just for You 💖</h1>
+  <section id="about">
+    <h2>About Us</h2>
     <p>
-      You’re the reason I smile a little more, laugh a little louder, and love a whole lot deeper.
+      Anandam is a non-profit organization dedicated to uplifting the lives of the underprivileged through education, health care, and empowerment programs. 
+      We believe in spreading joy by enabling communities to thrive with dignity and purpose.
     </p>
-    <p>
-      I made this little surprise to remind you how special you are to me. Forever and always, you're in my heart.
-    </p>
-    <p>— With love, Nayas ❤️</p>
-  </div>
+  </section>
 
-  <script>
-    function showMessage() {
-      document.querySelector(".btn").style.display = "none";
-      document.getElementById("messageBox").style.display = "block";
+  <section id="work">
+    <h2>Our Work</h2>
+    <ul>
+      <li>📚 Free education for children in rural areas</li>
+      <li>🥗 Community kitchens for the homeless</li>
+      <li>💊 Health camps and awareness programs</li>
+      <li>👩‍💼 Skill development for women and youth</li>
+    </ul>
+  </section>
 
-      // Create floating hearts
-      for (let i = 0; i < 30; i++) {
-        const heart = document.createElement("div");
-        heart.classList.add("heart");
-        heart.style.left = Math.random() * 100 + "vw";
-        heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
-        heart.style.fontSize = (Math.random() * 20 + 20) + "px";
-        heart.innerText = "❤️";
-        document.getElementById("hearts").appendChild(heart);
-      }
+  <section class="cta" id="donate">
+    <h2>Make a Difference</h2>
+    <p>Your small contribution can bring a big smile.</p>
+    <a href="#">Donate Now</a>
+    <a href="#">Volunteer with Us</a>
+  </section>
 
-      // Optional: Play music
-      const audio = new Audio("https://www.bensound.com/bensound-music/bensound-romantic.mp3");
-      audio.play();
-    }
-  </script>
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: contact@anandam.org</p>
+    <p>Phone: +91-98765-43210</p>
+    <p>Location: New Delhi, India</p>
+  </section>
+
+  <footer>
+    &copy; 2025 Anandam NGO. All rights reserved.
+  </footer>
 
 </body>
 </html>
