@@ -2,99 +2,115 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sports Central</title>
+  <title>A Special Surprise 💖</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      background: #f4f4f4;
-      color: #333;
-    }
-
-    header {
-      background-color: #1e3a8a;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-
-    nav {
-      background: #3b82f6;
-      padding: 10px;
-      text-align: center;
-    }
-
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
+      background: linear-gradient(to bottom, #fff0f5, #ffe4e1);
+      font-family: 'Georgia', serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
     }
 
     .container {
-      padding: 20px;
-    }
-
-    .news-card {
-      background: white;
-      margin-bottom: 20px;
-      padding: 15px;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-
-    .news-card h2 {
-      margin-top: 0;
-      color: #1d4ed8;
-    }
-
-    footer {
       text-align: center;
-      padding: 15px;
-      background: #1e3a8a;
+      max-width: 600px;
+      padding: 30px;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      display: none;
+    }
+
+    .btn {
+      padding: 15px 30px;
+      font-size: 1.2em;
+      background: #ff69b4;
+      border: none;
+      border-radius: 8px;
       color: white;
-      position: relative;
-      bottom: 0;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .btn:hover {
+      background: #ff1493;
+    }
+
+    .hearts {
+      position: absolute;
       width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .heart {
+      position: absolute;
+      color: #ff4d6d;
+      font-size: 2rem;
+      animation: float 6s infinite ease-in;
+      opacity: 0.7;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) scale(1);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) scale(1.5);
+        opacity: 0;
+      }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>🏆 Sports Central</h1>
-    <p>Your Daily Dose of Sports Updates</p>
-  </header>
+  <div class="hearts" id="hearts"></div>
 
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">Football</a>
-    <a href="#">Cricket</a>
-    <a href="#">Tennis</a>
-    <a href="#">Contact</a>
-  </nav>
+  <button class="btn" onclick="showMessage()">Click for a Surprise 💌</button>
 
-  <div class="container">
-    <div class="news-card">
-      <h2>⚽ India Wins Football Friendly Against Nepal</h2>
-      <p>India secured a 2-1 win in an exciting match held at the Jawaharlal Nehru Stadium last night.</p>
-    </div>
-
-    <div class="news-card">
-      <h2>🏏 IPL 2025: RCB Finally in Finals!</h2>
-      <p>RCB breaks the curse and reaches finals after a thrilling victory over MI.</p>
-    </div>
-
-    <div class="news-card">
-      <h2>🎾 Wimbledon Heats Up</h2>
-      <p>Top seeds face tough challenges as Wimbledon enters the quarterfinal stage.</p>
-    </div>
+  <div class="container" id="messageBox">
+    <h1>💖 Just for You 💖</h1>
+    <p>
+      You’re the reason I smile a little more, laugh a little louder, and love a whole lot deeper.
+    </p>
+    <p>
+      I made this little surprise to remind you how special you are to me. Forever and always, you're in my heart.
+    </p>
+    <p>— With love, Nayas ❤️</p>
   </div>
 
-  <footer>
-    &copy; 2025 Sports Central | Made with ❤️ by Nayas
-  </footer>
+  <script>
+    function showMessage() {
+      document.querySelector(".btn").style.display = "none";
+      document.getElementById("messageBox").style.display = "block";
+
+      // Create floating hearts
+      for (let i = 0; i < 30; i++) {
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+        heart.style.fontSize = (Math.random() * 20 + 20) + "px";
+        heart.innerText = "❤️";
+        document.getElementById("hearts").appendChild(heart);
+      }
+
+      // Optional: Play music
+      const audio = new Audio("https://www.bensound.com/bensound-music/bensound-romantic.mp3");
+      audio.play();
+    }
+  </script>
 
 </body>
 </html>
