@@ -1,0 +1,54 @@
+/* Sticky Header */
+header {
+  position: sticky;
+  top: 0;
+  background: white;
+  padding: 1rem;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Nav Hover */
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+nav a:hover {
+  color: #e91e63;
+}
+
+/* Card Hover */
+.card {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #e91e63;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  display: none;
+}
+
+/* Show button when scrolling */
+body:has(:not(header):not(:first-child)) .back-to-top {
+  display: block;
+}
