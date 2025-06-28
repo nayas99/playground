@@ -1,3 +1,12 @@
+/* Body */
+body {
+  background-color: #fffaf7;
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
 /* Sticky Header */
 header {
   position: sticky;
@@ -5,32 +14,72 @@ header {
   background: white;
   padding: 1rem;
   z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Nav Hover */
+/* Navigation */
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
 nav a {
   margin: 0 10px;
   text-decoration: none;
-  color: #333;
+  color: #e91e63;
   font-weight: bold;
   transition: color 0.3s;
 }
+
 nav a:hover {
+  color: #ff9800;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(to right, #ffe0ec, #fff4f9);
+  text-align: center;
+  padding: 2rem 1rem;
+  border-radius: 12px;
+  margin: 1rem;
+}
+
+/* Section Headings */
+section h2 {
   color: #e91e63;
 }
 
-/* Card Hover */
+/* Card Styling */
+.card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0 1rem;
+}
+
 .card {
+  background-color: #ffffff;
   border: 1px solid #ddd;
   padding: 1rem;
-  margin: 1rem;
+  margin: 1rem 0;
   border-radius: 10px;
   transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
 }
+
 .card:hover {
   transform: scale(1.02);
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Donate Section */
+#donate {
+  background-color: #fff0f4;
+  padding: 2rem 1rem;
+  border-radius: 12px;
 }
 
 /* Back to Top Button */
@@ -45,10 +94,21 @@ nav a:hover {
   border-radius: 50%;
   cursor: pointer;
   font-size: 18px;
+  font-weight: bold;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   display: none;
 }
 
 /* Show button when scrolling */
 body:has(:not(header):not(:first-child)) .back-to-top {
   display: block;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #fff0f4;
+  margin-top: 2rem;
+  color: #444;
 }
