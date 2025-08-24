@@ -82,22 +82,23 @@
  <section id="what-we-do">
   <h2>What We Do</h2>
 
-  <!-- Clothing Section -->
   <div class="work">
-    <h3>Clothing for Puja</h3>
-    <p>Every Durga Puja, we distribute new clothes to underprivileged children.</p>
-    <div class="gallery">
-      <img src="Images/Clothing/Cloth1.jpg" alt="Clothing drive 1">
-      <img src="Images/Clothing/Cloth2.jpg" alt="Clothing drive 2">
-      <img src="Images/Clothing/Cloth3.jpg" alt="Clothing drive 3">
-    </div>
+  <h3>Clothing for Puja</h3>
+  <p>Every Durga Puja, we distribute new clothes to underprivileged children.</p>
+  <button class="show-btn" onclick="toggleGallery('clothingGallery')">Show Images</button>  
+  <div class="gallery" id="clothingGallery">
+    <img src="Images/Clothing/Cloth1.png" alt="Clothing drive 1">
+    <img src="Images/Clothing/Cloth2.png" alt="Clothing drive 2">
+    <img src="Images/Clothing/Cloth3.png" alt="Clothing drive 3">
   </div>
+</div>
 
   <!-- Food Section -->
   <div class="work">
     <h3>Flood Relief (Food & Essentials)</h3>
-    <p>We provide food and essentials to families during floods.</p>
-    <div class="gallery">
+    <p>Every Durga Puja, we distribute new clothes to underprivileged children.</p>
+  <button class="show-btn" onclick="toggleGallery('foodGallery')">Show Images</button>
+    <div class="gallery" id="foodGallery">
       <img src="Images/Food/Food1.jpg" alt="Food relief 1">
       <img src="Images/Food/Food2.jpg" alt="Food relief 2">
       <img src="Images/Food/Food3.jpg" alt="Food relief 3">
@@ -108,7 +109,8 @@
   <div class="work">
     <h3>Blood Donation Camps</h3>
     <p>We organize regular blood donation camps in collaboration with hospitals.</p>
-    <div class="gallery">
+    <button class="show-btn" onclick="toggleGallery('bloodGallery')">Show Images</button>
+    <div class="gallery" id="bloodGallery">
       <img src="Images/Blood/Blood1.jpg" alt="Blood donation 1">
       <img src="Images/Blood/Blood2.jpg" alt="Blood donation 2">
       <img src="Images/Blood/Blood3.jpg" alt="Blood donation 3">
@@ -222,23 +224,35 @@
     <p>© 2025 Anandam NGO. Spread the Humanities.</p>
   </footer>
 
-  <!-- Scripts -->
-  <script>
-    function toggleWorkDetails() {
-      const details = document.getElementById("workDetails");
-      details.classList.toggle("show");
-    }
+<script>
+  function toggleWorkDetails() {
+    const details = document.getElementById("workDetails");
+    details.classList.toggle("show");
+  }
 
-    function toggleVolunteerForm() {
-      const form = document.getElementById("volunteerForm");
-      const chevron = document.getElementById("chevronIcon");
-      const isOpen = form.style.maxHeight === "500px";
+  function toggleVolunteerForm() {
+    const form = document.getElementById("volunteerForm");
+    const chevron = document.getElementById("chevronIcon");
+    const isOpen = form.style.maxHeight === "500px";
 
-      form.style.maxHeight = isOpen ? "0px" : "500px";
-      form.style.opacity = isOpen ? "0" : "1";
-      chevron.className = isOpen ? "fas fa-chevron-right" : "fas fa-chevron-down";
+    form.style.maxHeight = isOpen ? "0px" : "500px";
+    form.style.opacity = isOpen ? "0" : "1";
+    chevron.className = isOpen ? "fas fa-chevron-right" : "fas fa-chevron-down";
+  }
+
+  // 📸 Toggle Image Gallery
+  function toggleGallery(galleryId, button) {
+    const gallery = document.getElementById(galleryId);
+
+    if (gallery.style.display === "grid") {
+      gallery.style.display = "none";
+      button.textContent = "Show Images";
+    } else {
+      gallery.style.display = "grid";
+      button.textContent = "Hide Images";
     }
-  </script>
+  }
+</script>
 
 </body>
 </html>
