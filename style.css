@@ -52,27 +52,40 @@ section h2 {
   color: #e91e63;
 }
 
-/* Card Styling */
+/* Card Container */
 .card-container {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1rem;
   padding: 0 1rem;
 }
 
+/* Card Styling */
 .card {
   background-color: #ffffff;
   border: 1px solid #ddd;
   padding: 1rem;
-  margin: 1rem 0;
   border-radius: 10px;
   transition: transform 0.3s, box-shadow 0.3s;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .card:hover {
   transform: scale(1.02);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Card Images */
+.card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  object-fit: cover;
 }
 
 /* Donate Section */
@@ -157,4 +170,44 @@ footer {
 
 .volunteer-form button:hover {
   background-color: #d81b60;
+}
+
+/* --------------------------- */
+/* 📱 Responsive Design */
+/* --------------------------- */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero {
+    padding: 1.5rem 1rem;
+  }
+
+  .card-container {
+    grid-template-columns: 1fr; /* stack cards */
+  }
+
+  .card {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  nav a {
+    font-size: 14px;
+  }
+
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .card img {
+    border-radius: 6px;
+  }
 }
